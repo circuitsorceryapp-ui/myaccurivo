@@ -1,0 +1,11 @@
+name,kind,reg_no,vat_no,email,phone,address,bank_name,iban,swift
+"SIA ElektroServiss",customer,LV40103012345,LV40103012345,info@elektroserviss.lv,"+371 67234501","Brīvības gatve 214, Rīga, LV-1039","Swedbank",LV55HABA0550033123456,HABALV22
+"SIA Tehnolandija",customer,LV40103098765,LV40103098765,veikals@tehnolandija.lv,"+371 67456789","Jāņa iela 12, Rīga, LV-1050","SEB",LV44UNLA0002310001234,UNLALV2X
+"SIA Voltas Preču Nams",customer,LV40103442211,LV40103442211,kontakti@voltnams.lv,"+371 67617617","Kurzemes prospekts 1a, Rīga, LV-1067","Luminor",LT12NBRB000012345678,NBRBLT2X
+"SIA Audio Video Centers",customer,LV40103777889,LV40103777889,info@avc.lv,"+371 67110000","Krasta iela 52, Rīga, LV-1057","Citadele",LV52PARX0012345678910,PARXLV22
+"Klīvers un Partneri SIA",customer,LV40103555666,LV40103555666,birojs@klivers.lv,"+371 67890123","Skolas iela 3, Rīga, LV-1010","Swedbank",LV24HABA0440022113344,HABALV22
+"Baltic Gadget Store SIA",customer,LV40103888999,LV40103888999,hello@balticgadget.lv,"+371 25500300","Maskavas iela 240, Rīga, LV-1062","SEB",LV71UNLA0020044556677,UNLALV2X
+"VSIA Mūzikas Nams",customer,LV9001098877,LV9001098877,info@muzikasnams.lv,"+371 67033400","Barona iela 33, Rīga, LV-1011","Luminor",LV98NBRB0009988776655,NBRBLT2X
+"SIA Lampa un Spuldze",customer,LV40103222333,LV40103222333,pardosana@lamps.lv,"+371 67887766","Dzelzavas iela 88, Rīga, LV-1073","Citadele",LV33PARX0034455667788,PARXLV22
+"Juris Bērziņš (fiziska persona)",customer,120388-11234,,juris.berzins@inbox.lv,"+371 26111222","Ziedonu iela 5, Jelgava, LV-3001","Swedbank",LV90HABA0550123487654,HABALV22
+"SIA ElectroParts Lv",customer,LV40103999444,LV40103999444,office@electroparts.lv,"+371 67443322","Mūkusalas iela 41, Rīga, LV-1004","SEB",LV68UNLA0051234567890,UNLALV2X

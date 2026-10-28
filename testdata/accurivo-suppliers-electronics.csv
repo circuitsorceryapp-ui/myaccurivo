@@ -1,0 +1,11 @@
+name,kind,reg_no,vat_no,email,phone,address,bank_name,iban,swift
+"SIA Elektronikas Vairumtirdzniecība",supplier,LV40103111222,LV40103111222,pasutijumi@evt.lv,"+371 67112233","Gaismas iela 7, Rīga, LV-1026","Swedbank",LV06HABA0440033445566,HABALV22
+"TechDistribution Baltic SIA",supplier,LV40103333444,LV40103333444,sales@techdist.lv,"+371 66778899","Lāčplēša iela 75, Rīga, LV-1011","SEB",LV59UNLA0078901234567,UNLALV2X
+"SIA Komponentu Centrs",supplier,LV40103555777,LV40103555777,info@komponenti.lv,"+371 68990011","Ojāra Vācieša iela 5, Rīga, LV-1002","Citadele",LV77PARX0055443322110,PARXLV22
+"Baltic Circuit Supply SIA",supplier,LV40103777555,LV40103777555,orders@bcsupply.lv,"+371 63456789","Ausekļa iela 18, Rīga, LV-1050","Luminor",LV41NBRB0004567891234,NBRBLT2X
+"SIA Elektro Materiāli",supplier,LV40103123999,LV40103123999,info@em.lv,"+371 62345678","Zemitāna iela 9, Rīga, LV-1012","Swedbank",LV83HABA0550044556677,HABALV22
+"PowerSource Wholesale SIA",supplier,LV40103666222,LV40103666222,info@powersource.lv,"+371 66112244","Katrīnas iela 4, Ogre, LV-5001","SEB",LV92UNLA0034567890123,UNLALV2X
+"SIA Audio Importētājs",supplier,LV40103222999,LV40103222999,office@audioimp.lv,"+371 67788990","Grobīnas iela 12, Liepāja, LV-3401","Citadele",LV26PARX0023456789012,PARXLV22
+"LED Solutions Latvia SIA",supplier,LV40103999333,LV40103999333,sales@leds.lv,"+371 25654321","Mazā Smilšu iela 8, Rīga, LV-1050","Luminor",LV15NBRB0003456789012,NBRBLT2X
+"SIA Kabeļu Fabrika",supplier,LV40103444888,LV40103444888,info@kabelifabrika.lv,"+371 64567890","Rūpniecības iela 22, Jēkabpils, LV-5201","Swedbank",LV37HABA0440099887766,HABALV22
+"Global Parts Traders SIA",supplier,LV40103777111,LV40103777111,export@gpt.lv,"+371 61112233","Vienības gatve 144, Rīga, LV-1058","SEB",LV48UNLA0012345098765,UNLALV2X

@@ -115,6 +115,7 @@ try {
     ['cmr_carrier', 'TEXT'], ['cmr_dispatch', 'TEXT'], ['cmr_delivery', 'TEXT'],
     ['cmr_weight', 'TEXT'], ['cmr_packages', 'TEXT'],
     ['info_lines', 'TEXT'], ['issued_by', 'TEXT'], ['signed_by', 'TEXT'], ['info_rows', 'TEXT'],
+    ['source_id', 'INTEGER'],
   ]) {
     if (!have.includes(col)) db.exec(`ALTER TABLE invoices ADD COLUMN ${col} ${type}`);
   }

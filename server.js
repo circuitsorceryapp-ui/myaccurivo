@@ -57,9 +57,9 @@ function sessionUser(req) {
   return { ...u, sid };
 }
 
-const DOC_TYPES = ['invoice', 'quote', 'bill', 'cmr'];
+const DOC_TYPES = ['invoice', 'quote', 'bill', 'cmr', 'ppd'];
 function nextNumber(tenantId, docType) {
-  const prefix = { invoice: 'INV', quote: 'QUO', bill: 'PUR', cmr: 'CMR' }[docType] || 'DOC';
+  const prefix = { invoice: 'INV', quote: 'QUO', bill: 'PUR', cmr: 'CMR', ppd: 'PPD' }[docType] || 'DOC';
   const rows = db.prepare("SELECT number FROM invoices WHERE tenant_id = ? AND number LIKE ?").all(tenantId, prefix + '-%');
   let max = 0;
   for (const r of rows) { const n = parseInt(String(r.number).split('-')[1], 10); if (n > max) max = n; }
@@ -261,6 +261,25 @@ async function api(req, res, url, method, body) {
     if (auto) db.prepare('UPDATE invoices SET status = ? WHERE id = ?').run(auto, row.id);
     const upd = db.prepare('SELECT * FROM invoices WHERE id = ?').get(row.id);
     return json(res, 201, { ok: true, invoice: invoiceWithPaid(upd) });
+  }
+  // goods received: create a PPD (Preču piegādes dokuments) from a bill, mark the bill received
+  if (url.pathname === '/api/invoices/ppd' && method === 'POST') {
+    const b = body || {};
+    const bill = db.prepare('SELECT * FROM invoices WHERE id = ? AND tenant_id = ?').get(b.bill_id, T);
+    if (!bill) return bad(res, 'Bill not found');
+    if (bill.doc_type !== 'bill') return bad(res, 'PPD can only be created from a bill');
+    const existing = db.prepare('SELECT * FROM invoices WHERE tenant_id = ? AND doc_type = ? AND source_id = ?').get(T, 'ppd', bill.id);
+    if (existing) return json(res, 200, { ok: true, id: existing.id, number: existing.number, existed: true });
+    const number = nextNumber(T, 'ppd');
+    const r = db.prepare(`INSERT INTO invoices (tenant_id, number, doc_type, customer, contact_id, description, amount_cents, currency, vat_rate, issue_date, due_date, status, items, info_lines, issued_by, signed_by, info_rows, source_id)
+      VALUES (?, ?, 'ppd', ?, ?, ?, ?, ?, ?, ?, '', 'sent', ?, ?, ?, ?, ?, ?)`).run(
+      T, number, String(bill.customer || '').slice(0, 200), bill.contact_id || null,
+      String(bill.description || '').slice(0, 500), bill.amount_cents, String(bill.currency || 'EUR').slice(0, 3),
+      num(bill.vat_rate ?? 21), String(now()).slice(0, 10),
+      bill.items, String(bill.info_lines || '').slice(0, 1000), String(bill.issued_by || '').slice(0, 100), String(bill.signed_by || '').slice(0, 100),
+      bill.info_rows || '[]', bill.id);
+    db.prepare('UPDATE invoices SET status = ? WHERE id = ?').run('received', bill.id);
+    return json(res, 201, { ok: true, id: Number(r.lastInsertRowid), number });
   }
   const payMatch = url.pathname.match(/^\/api\/payments\/(\d+)$/);
   if (payMatch && method === 'DELETE') {

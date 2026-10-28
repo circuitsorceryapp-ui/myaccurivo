@@ -1,0 +1,7 @@
+{
+  "main": "accurivo-bundle.cjs",
+  "output": "accurivo-win.blob",
+  "disableExperimentalSEAWarning": true,
+  "useSnapshot": false,
+  "useCodeCache": false
+}

@@ -1,6 +1,6 @@
 {
   "name": "accurivo",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Accurivo — simple multi-company accounting for small businesses (invoices, quotes, bills, CMR waybills, contacts, stock, scans, backups, restore)",
   "main": "server.js",
   "engines": { "node": ">=22" },
