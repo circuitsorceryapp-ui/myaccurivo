@@ -60,10 +60,12 @@ nav > a:hover { opacity: 1; color: var(--accent); }
 
 /* hero */
 .hero { padding: 84px 0 56px; }
-.hero .wrap { display: grid; gap: 30px; }
+.hero .wrap { display: grid; gap: 22px; justify-items: center; text-align: center; }
 .hero .lead { margin-top: 12px; }
-.cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
-.hero-points { display: flex; gap: 24px; flex-wrap: wrap; color: #0f766e; font-weight: 600; font-size: 14px; }
+.cta { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+.hero .muted.small { margin: 0 auto; max-width: 640px; line-height: 1.7; }
+.sup-line { margin-top: 6px; }
+.hero-points { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; color: #0f766e; font-weight: 600; font-size: 14px; }
 .hero-points div { display: flex; align-items: center; gap: 7px; }
 .hero-points div::before { content: '✓'; width: 20px; height: 20px; border-radius: 50%; background: #ccfbf1; color: #0f766e; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
 
