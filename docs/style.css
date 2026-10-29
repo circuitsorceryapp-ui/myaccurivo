@@ -142,22 +142,27 @@ footer .wrap { display: flex; justify-content: space-between; gap: 14px; flex-wr
   .reveal { opacity: 1; transform: none; }
 }
 
-/* Support / donations */
+
+/* Donation button next to download */
+.dl-row { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
 .btn.don {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: linear-gradient(135deg, #ffd042, #ffb02e);
   color: #3a2a00;
+  border: 1px solid rgba(58, 42, 0, 0.15);
 }
 .btn.don:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(255, 176, 46, 0.35);
+  box-shadow: 0 10px 24px rgba(255, 176, 46, 0.35);
 }
+.sup-line { margin-top: 14px; line-height: 1.6; }
 a.hobby {
-  color: var(--accent, #7c6cf0);
+  color: var(--accent);
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
   border-bottom: 1px dashed currentColor;
 }
 a.hobby:hover { opacity: 0.8; }
